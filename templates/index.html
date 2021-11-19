@@ -1,0 +1,74 @@
+{% block head %}
+<title>JAMMA Comment</title>
+{% endblock %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+  input, h3, h4, h5, p {
+    font-family: 'Inter', sans-serif;
+  }
+  body, form {
+            background-color: #252a37;
+        }
+
+  p {
+    font-size: 120%;
+  }
+</style>
+
+{% block body %}
+  <form action="/submit_message" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin w3-round-large" method="post">
+    {% if commentFailed %}
+      <div class="w3-panel w3-red w3-section">
+        <p>Please fill in username and comment, then try again.</p>
+      </div> 
+    {% endif %}
+    <div class="w3-row w3-section">
+        <div class="w3-col" style="width:50px"><i class="w3-xxlarge material-icons">person</i></div>
+        <div class="w3-rest">
+          <input class="w3-input w3-border w3-round-large" name="username" type="text" placeholder="User Name">
+        </div>
+    </div>
+
+    <div class="w3-row w3-section">
+        <div class="w3-col" style="width:50px"><i class="w3-xxlarge material-icons">email</i></div>
+        <div class="w3-rest">
+          <input class="w3-input w3-border w3-round-large" name="email" type="text" placeholder="Email">
+        </div>
+    </div>
+
+    <div class="w3-row w3-section">
+        <div class="w3-col " style="width:50px"><i class="w3-xxlarge material-icons">phone</i></div>
+        <div class="w3-rest">
+          <input class="w3-input w3-border w3-round-large" name="tel" type="text" placeholder="Phone">
+        </div>
+    </div>
+
+    <div class="w3-row w3-section">
+        <div class="w3-col" style="width:50px"><i class="w3-xxlarge material-icons">message</i></div>
+        <div class="w3-rest">
+          <textarea rows="5" class="w3-input w3-border w3-round-large" name="message" type="text" placeholder="Comment"></textarea>
+        </div>
+    </div>
+
+    <input type="submit" value="Submit" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding w3-round-large">
+  </form>
+
+  {% if messages %}
+    <div class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin w3-round-large">
+      <h3>RESPONSES: </h3>
+      {% for message in messages %}
+        <div class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin w3-round-large">
+          <h5>{{ messages[message].userName }}</h5>
+          <p> {{ messages[message].body }} </p>
+        </div>
+      {% endfor%}
+    </div>
+  {% else %}
+    <div class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin w3-round-large">
+      <h5>No one has shared their thoughts yet. Be the first!</h5>
+    </div>
+  {% endif %}
+
+{% endblock %}

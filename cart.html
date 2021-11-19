@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap'); 
+
+            a:visited, a:active {
+              color: inherit;
+            }
+
+            button:hover {
+              color:yellow;
+            }
+
+            a:link { text-decoration: none; }
+
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                
+            }
+
+            .horizontaldivider {
+              font-family: 'Inter', sans-serif;
+              font-size:larger;
+            }
+
+            body {
+                background: #252a37;
+            }
+
+            td {
+                font-family: 'Inter', sans-serif;
+                color:white;
+            }
+
+            .buttons {
+                border: 1px solid black;
+                border-radius: 10px;
+                font-size:150%;
+                white-space: nowrap;
+                background-color:gray;
+                color:white;
+            }
+
+            .bigTitles {
+                font-size:400%;
+                margin-bottom:10%;
+            }
+
+            .notsobigTitles {
+                font-size:175%;
+                color:white;
+                padding-bottom:1%;
+            }
+
+            .bannerSubtitle {
+                position: absolute;
+                bottom: 8px;
+                right: 16px;
+                font-size:175%;
+                color:white;
+                font-weight: bold;
+            }
+
+            .bannerContainer {
+                position: relative;
+                text-align: center;
+            }
+
+            .brandsIcon {
+                height:10%;
+
+            }
+
+            .bestsellers {
+                width:auto;
+                height:110px;
+            }
+
+            .newProducts {
+                width:auto;
+                height:230px;
+            }
+
+            button:hover, a:hover {
+            opacity: 0.7;
+            }
+
+            .warningMessage {
+                font-size:4.5vw;
+                font-weight:bolder;
+                text-align: center;
+                vertical-align:middle;
+                padding-top:10%;
+                padding-bottom:10%;
+                font-family: Inter;
+                color:khaki;
+            }
+
+
+        </style>
+        <title>JAMMA Featured</title>
+    </head>
+    <body>
+
+        <table>
+            <tr>
+                <td style="width:5%">
+                    <a href="about.html" target="_self">
+                        <img src="Logo only.png" width="65px" height="auto"
+                    </a>
+                </td>
+                <td style="width:80%">
+                    <img class="center" src="slogan with motto.png" width="auto" height="55px"
+                </td>
+                <td style="padding-right:20px;">
+                <form id="emailadd">
+                    <label for="emailadd" style="font-family: 'Inter', sans-serif; font-size:small; color: white;">Email & Password:</label>
+                    <input type="text" id="emailadd" name="emailadd">
+                    
+                    <div style="padding-left:101px;padding-top:4px;">  
+                        <input type="submit"/>  
+                    </div> 
+                </form>
+                </td>
+                <td>
+                    <a href="index.html" target="_self">
+                        <img src="Shopping Cart Icon activated.png" width="auto" height="44px" style="padding-right:15px;">
+                    </a>
+                </td>
+                <td>
+                    <a href="profile.html" target="_self">
+                        <img src="Profile icon 2.png" width="auto" height="44px">
+                    </a>
+                </td>
+            </tr>
+        </table>
+
+        <a href="allproducts.html" target="_self">
+            <p class="warningMessage">Sorry, your cart is empty!<br>Browse our products then add one.</p>
+        </a>
+
+    </body>
+
+</html>

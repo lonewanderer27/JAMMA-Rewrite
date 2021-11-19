@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <title>JAMMA</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    
+            body {
+                background-color: #252a37;
+            }
+            a {
+                text-decoration: none;
+            }
+            .Sidebar_text {
+                color: white; 
+                font-family: Abel;
+                padding-left:15px;
+            }
+    
+            .Sidebar_text_active {
+                color: #fef668;
+            }
+            
+            .Sidebar_text_active:hover {
+                color:white;
+            }
+    
+            .Sidebar_text:hover {
+                color: #fef668;
+            }
+    
+            p {
+                font-family:Inter;
+            }
+    
+            .hr {
+                border-bottom: 6px solid white;
+                width: 100%;
+            }
+    
+        </style>
+    </head>
+<body>
+    <!-- Top Bar for Wide Screen -->
+    <div class="w3-row w3-hide-medium w3-hide-small w3-top" style="padding-top:20px;padding-bottom:15px;background:#252a37">
+        <div class="w3-quarter w3-container">
+            <img src="Logo only.png" height="55px" alt="" onclick="w3_open()" id="Logo">
+
+        </div>
+
+        <div class="w3-half w3-container w3-center">
+            <a href="index.html">
+          <img src="slogan with motto.png" height="60px" alt="">
+            </a>
+        </div>
+
+        <div class="w3-rest w3-container w3-right">
+          <img src="Profile icon.png" alt="" height="55px">
+        </div>
+
+        <div class="w3-rest w3-container w3-right">
+            <img src="Shopping Cart Icon.png" alt="" height="55px">
+        </div>
+
+    </div>
+
+    <!-- Top Bar for Medium Screen -->
+    <div class="w3-row w3-hide-large w3-hide-small w3-top" style="padding-top:20px;padding-bottom:15px;background:#252a37">
+        <div class="w3-twothird w3-container">
+            <img src="Logo only.png" height="55px" alt="" class="w3-left" onclick="w3_open()" id="Logo">
+            <a href="index.html">
+                <img src="slogan with motto.png" height="60px" alt="" class="w3-right w3-margin-right">
+            </a>
+            
+        </div>
+
+        <div class="w3-rest w3-container">
+            <img src="Profile icon.png" alt="" height="55px" class="w3-right">
+            <img src="Shopping Cart Icon.png" alt="" height="55px" class="w3-right w3-margin-right">
+            
+        </div>
+    </div>
+
+    <!-- Top Bar for Small Screen -->
+    <div class="w3-row w3-hide-large w3-hide-medium w3-top" style="padding-top:20px;padding-bottom:15px;background:#252a37">
+        <div class="w3-container">
+            <img src="Logo only.png" height="55px" alt="" class="w3-left" onclick="w3_open()" id="Logo">
+
+            <img src="Profile icon.png" alt="" height="55px" class="w3-right">
+            <img src="Shopping Cart Icon.png" alt="" height="55px" class="w3-right w3-margin-right">
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;padding-top:25px;background:#252a37" id="Sidebar">
+        <a onclick="w3_close()" class="w3-bar-item">
+            <img src="O1 Menu Expanded.png" alt="" width="25px" style="margin-left:14px">
+            <img src="slogan with motto.png" height="30px" alt="" class="w3-left w3-margin-left w3-hide-large w3-hide-medium">
+        </a>
+        <br> <br>
+        <a href="#" class="w3-bar-item">
+            <table>
+                <tr>
+                    <td><img src="1 Featured Product -s.png" alt="" width="50px"></td>
+                    <td><h3  class="Sidebar_text Sidebar_text_active">Featured</h2></td>
+                </tr>
+            </table>
+        </a>
+        <a href="#" class="w3-bar-item">
+            <table>
+                <tr>
+                    <td><img src="2 All-Items.png" alt="" width="50px"></td>
+                    <td><h3  class="Sidebar_text">All Products</h2></td>
+                </tr>
+            </table>
+        </a>
+        <a href="#" class="w3-bar-item">
+            
+            <table>
+                <tr>
+                    <td><img src="3 Smartwatch icon.png" alt="" width="50px"></td>
+                    <td><h3  class="Sidebar_text">Smartwatch</h2></td>
+                </tr>
+            </table>
+        </a>
+        <a href="#" class="w3-bar-item">
+            
+            <table>
+                <tr>
+                    <td><img src="4 Headphone Icon.png" alt="" width="50px"></td>
+                    <td><h3  class="Sidebar_text">Headphones</h2></td>
+                </tr>
+            </table>
+        </a>
+        <a href="#" class="w3-bar-item w3-bottom w3-margin-bottom">
+            
+            <table>
+                <tr>
+                    <td><img src="5 About.png" alt="" width="50px"></td>
+                    <td><h3  class="Sidebar_text">About</h2></td>
+                </tr>
+            </table>
+        </a>
+    </div>
+
+    <!-- Overlay -->
+    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer;margin-left:235px;" id="overlay"></div>
+
+    <!-- Script of the Sidebar and Overlay-->
+    <script>
+        function w3_open() {
+            document.getElementById("Sidebar").style.width = "235px";
+            document.getElementById("Sidebar").style.display = "block";
+            sleep(2)
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("Sidebar").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+    <script src="playground-js.js"></script>
+
+    <div class="w3-container">
+        <div class="w3-card-4" style="width:50%;">
+          <header class="w3-container w3-blue">
+          </header>
+      
+          <div class="w3-container">
+            <img src="" alt="">
+          </div>
+      
+          <footer class="w3-container w3-blue">
+            <h5>Footer</h5>
+          </footer>
+        </div>
+      </div>
+
+</body>
+</html>
